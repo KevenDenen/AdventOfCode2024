@@ -26,8 +26,11 @@ internal class Solver
 
     private static bool IsSafe(int[] levels)
     {
-        bool increasing = levels[1] > levels[0];
-        if (levels.Window(2).All(w => (increasing ? w[1] - w[0] : w[0] - w[1]) is >= 1 and <= 3))
+        if (levels.Window(2).All(w => w[0] - w[1] is >= 1 and <= 3))
+        {
+            return true;
+        }
+        if (levels.Window(2).All(w => w[1] - w[0] is >= 1 and <= 3))
         {
             return true;
         }
