@@ -1,3 +1,10 @@
 ﻿var day1Solver = new AdventOfCode2024.Day1.Solver(false);
+Console.Write("Day 1 Part 1: ");
 Console.WriteLine(day1Solver.Part1());
+Console.Write("Day 1 Part 2: ");
 Console.WriteLine(day1Solver.Part2());
+var day2Solver = new AdventOfCode2024.Day2.Solver(false);
+Console.Write("Day 2 Part 1: ");
+Console.WriteLine(day2Solver.Part1());
+Console.Write("Day 2 Part 2: ");
+Console.WriteLine(day2Solver.Part2());

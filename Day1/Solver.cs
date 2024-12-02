@@ -1,11 +1,9 @@
-﻿using System.Linq;
-
-namespace AdventOfCode2024.Day1;
+﻿namespace AdventOfCode2024.Day1;
 
 internal class Solver
 {
-    List<long> left = [];
-    List<long> right = [];
+    readonly List<long> left = [];
+    readonly List<long> right = [];
 
     public Solver(bool sample)
     {
