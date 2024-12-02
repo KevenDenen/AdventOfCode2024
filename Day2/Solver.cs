@@ -1,20 +1,48 @@
-﻿namespace AdventOfCode2024.Day2;
+﻿using SuperLinq;
+
+namespace AdventOfCode2024.Day2;
 
 internal class Solver
 {
+    string[] data;
     public Solver(bool sample)
     {
         var fileName = sample ? "sample.txt" : "input.txt";
         var rawInput = File.ReadAllText($"./Day2/{fileName}");
+        data = rawInput.ToLines();
     }
 
-    public string Part1()
+    public string Part1() => data.Select(line => line.Split()
+                                                     .Select(level => int.Parse(level))
+                                                     .ToArray())
+                                 .Count(IsSafe)
+                                 .ToString();
+
+    public string Part2() => data.Select(line => line.Split()
+                                                     .Select(level => int.Parse(level))
+                                                     .ToArray())
+                                 .Count(IsSafeSkipOne)
+                                 .ToString();
+
+    private static bool IsSafe(int[] levels)
     {
-        return string.Empty;
+        bool increasing = levels[1] > levels[0];
+        if (levels.Window(2).All(w => (increasing ? w[1] - w[0] : w[0] - w[1]) is >= 1 and <= 3))
+        {
+            return true;
+        }
+        return false;
     }
 
-    public string Part2()
+    private static bool IsSafeSkipOne(int[] levels)
     {
-        return string.Empty;
+        for (var i = 0; i < levels.Length; i++)
+        {
+            if (IsSafe([.. levels[..i], .. levels[(i + 1)..]]))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
