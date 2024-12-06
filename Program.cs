@@ -18,8 +18,13 @@
 //Console.WriteLine(day4Solver.Part1());
 //Console.Write("Day 4 Part 2: ");
 //Console.WriteLine(day4Solver.Part2());
-var day5Solver = new AdventOfCode2024.Day5.Solver(sample: false);
-Console.Write("Day 5 Part 1: ");
-Console.WriteLine(day5Solver.Part1());
-Console.Write("Day 5 Part 2: ");
-Console.WriteLine(day5Solver.Part2());
+//var day5Solver = new AdventOfCode2024.Day5.Solver(sample: false);
+//Console.Write("Day 5 Part 1: ");
+//Console.WriteLine(day5Solver.Part1());
+//Console.Write("Day 5 Part 2: ");
+//Console.WriteLine(day5Solver.Part2());
+var day6Solver = new AdventOfCode2024.Day6.Solver(sample: false);
+Console.Write("Day 6 Part 1: ");
+Console.WriteLine(day6Solver.Part1());
+Console.Write("Day 6 Part 2: ");
+Console.WriteLine(day6Solver.Part2());
